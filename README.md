@@ -23,7 +23,7 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 
 1. Descompactar o arquivo **Projeto_01.zip**, que contém o kernel e a imagem do sistema e colocar os arquivos **test_info.c** e **sys_info.h** na pasta gerada.
 
-2. Modificar o arquivo *linux-3.17.2/arch/x86/syscalls/syscall_32.tlb*, adicionando a seguinte linha ao final do arquivo (antes do `#endif`):  
+2. Modificar o arquivo *linux-3.17.2/arch/x86/syscalls/syscall_32.tlb*, adicionando a seguinte linha ao final do arquivo:  
     `357	i386	info	sys_info`
 
 3. Adicionar a declaração da função *sys_info* e do struct *info_t* no arquivo *linux-3.17.2/include/linux/syscalls.h*:  
