@@ -16,7 +16,7 @@ Para implementação do trabalho, utilizamos o Kernel Linux versão 3.17.2, e a 
 Pra montar os exemplos basta executar:
 ```bash
 cd sys_info
-make all
+make examples
 ```
 ## Instruções de instalação e execução
 
@@ -49,7 +49,10 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
     `$ make -j 5 ARCH=i386`
 
 7. Após isso, compilar o código de teste **test_info.c** com o comando:  
-    `$ gcc -m32 -static test_info.c -o test_info`
+    ```bash
+    $ cd sys_info
+    $ make test
+    ```
 
 8. Executar a máquina virtual para testar a implementação da syscall no kernel alvo, utilizando o comando:  
     `$ qemu-system-i386 -hda DC_SO.img -kernel linux-3.17.2/arch/i386/boot/bzImage -append "ro root=/dev/hda" -hdb test_info`
