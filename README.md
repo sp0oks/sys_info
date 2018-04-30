@@ -8,6 +8,7 @@ Para este projeto implementamos a syscall sys_info(), que dependendo da opção 
 - OPT_UID(UID e EUID do processo atual)
 - OPT_RUSAGE(Informações do tempo total de execução do processo atual e dos processos filhos)
 - OPT_ALL(todas as opções acima)
+
 Todas as informações pedidas são retornadas numa struct info_t, que pode ou não ter todos seus campos completos dependendo da opção pedida.
 Para implementação do trabalho, utilizamos o Kernel Linux versão 3.17.2, e a imagem de sistema DC_SO.img fornecida em aula.
 
