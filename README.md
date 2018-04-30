@@ -59,9 +59,9 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 
 10. Executar os seguintes comandos para teste da syscall:  
     ```bash
-	$ cat /dev/hdb > test_info 
-    	$ chmod +x test_info
-    	$ ./test_info
+    $ cat /dev/hdb > test_info 
+    $ chmod +x test_info
+    $ ./test_info
     ```
 ## Realizado pelos alunos:
 * Bianca Garcia Martins
