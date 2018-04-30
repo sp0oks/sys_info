@@ -28,16 +28,16 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 
 3. Adicionar a declaração da função *sys_info* e do struct *info_t* no arquivo *linux-3.17.2/include/linux/syscalls.h*:  
     ```C
-	#include <linux/utsname.h>
+    #include <linux/utsname.h>
 
-	typedef struct {
-		struct new_utsname unameData;
-		pid_t pid, ppid;
-		uid_t uid, euid;
-		struct rusage rusageSelf, rusageChildren;
-	} info_t;
+    typedef struct {
+	struct new_utsname unameData;
+	pid_t pid, ppid;
+	uid_t uid, euid;
+	struct rusage rusageSelf, rusageChildren;
+    } info_t;
     
-    	asmlinkage long sys_info(int opt, info_t *buf);
+    asmlinkage long sys_info(int opt, info_t *buf);
     ```
 4. Incluir o código **info.c** no diretório *linux-3.17.2/arch/x86/kernel/*.
 
