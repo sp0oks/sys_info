@@ -24,7 +24,7 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 1. Descompactar o arquivo **Projeto_01.zip**, que contém o kernel e a imagem do sistema e colocar os arquivos **test_info.c** e **sys_info.h** na pasta gerada.
 
 2. Modificar o arquivo *linux-3.17.2/arch/x86/syscalls/syscall_32.tlb*, adicionando a seguinte linha ao final do arquivo (antes do `#endif`):  
-    `357	i386	callkpar	sys_callkpar`
+    `357	i386	info	sys_info`
 
 3. Adicionar a declaração da função *sys_info* e do struct *info_t* no arquivo *linux-3.17.2/include/linux/syscalls.h*:  
     ```C
@@ -42,7 +42,7 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 4. Incluir o código **info.c** no diretório *linux-3.17.2/arch/x86/kernel/*.
 
 5. Modificar o Makefile da pasta *linux-3.17.2/arch/x86/kernel/*, para que o nosso arquivo **info.c** seja compilado com o kernel, incluindo a linha:  
-    `obj-y	+=	callkpar.o`
+    `obj-y	+=	info.o`
 
 6. Acessar a pasta *linux-3.17.2/* e compilar o kernel, com o comando:  
     `$ make -j 5 ARCH=i386`
