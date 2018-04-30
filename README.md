@@ -11,6 +11,7 @@ Para este projeto implementamos a syscall sys_info(), que dependendo da opção 
 
 Todas as informações pedidas são retornadas numa struct info_t, que pode ou não ter todos seus campos completos dependendo da opção pedida.
 Para implementação do trabalho, utilizamos o Kernel Linux versão 3.17.2, e a imagem de sistema DC_SO.img fornecida em aula.
+Apesar de não ter sido informado no enunciado do trabalho, é necessário compilar o kernel com o compilador **gcc-5**, caso contrário não é possível compilar. Para isto, baixe o pacote **gcc-5** ou similar na sua distribuição Linux e altere todos os termos *gcc* para *gcc-5* em *linux-3.17.2/Makefile*.
 
 ## Execução dos exemplos
 Pra montar os exemplos basta executar:
