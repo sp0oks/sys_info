@@ -66,4 +66,4 @@ Para testar a implementação da systemcall, realizamos os seguintes passos:
 ## Realizado pelos alunos:
 * Bianca Garcia Martins
 * Gabriel de Souza Alves
-* Giulia Mazzuti Teixeira
+* Giulia Mazzutti Teixeira
