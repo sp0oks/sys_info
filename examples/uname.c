@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <errno.h>
-#include "sys_info.h"
+#include "../src/sys_info.h"
 
 int main(){
-/*	struct utsname unameData;
-	int err = uname(&unameData);*/
 	info_t infobuf;
 	int err = sys_info(OPT_UNAME, &infobuf);
 	char* error = NULL;
