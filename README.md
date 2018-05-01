@@ -1,6 +1,3 @@
-# sys_info
-A general system information syscall project for the Linux Kernel.
-
 ## Introdução
 Para este projeto implementamos a syscall sys_info(), que dependendo da opção passada no argumento pode retornar:
 - OPT_UNAME(nome e versão do Kernel atual, nome do host, arquitetura do sistema)
@@ -10,8 +7,12 @@ Para este projeto implementamos a syscall sys_info(), que dependendo da opção 
 - OPT_ALL(todas as opções acima)
 
 Todas as informações pedidas são retornadas numa struct info_t, que pode ou não ter todos seus campos completos dependendo da opção pedida.
+
+O protótipo da função é:
+`long sys_info(int opt, info_t buffer)`
+Onde `opt` é uma das opções listadas anteriormente, `buffer` é uma struct `info_t` onde os dados pedidos serão salvos, e o valor de retorno é o valor de erro que eventualmente pode ocorrer.
+
 Para implementação do trabalho, utilizamos o Kernel Linux versão 3.17.2, e a imagem de sistema DC_SO.img fornecida em aula.
-Apesar de não ter sido informado no enunciado do trabalho, é necessário compilar o kernel com o compilador **gcc-5**, caso contrário não é possível compilar. Para isto, baixe o pacote **gcc-5** ou similar na sua distribuição Linux e altere todos os termos *gcc* para *gcc-5* em *linux-3.17.2/Makefile*.
 
 ## Execução dos exemplos
 Pra montar os exemplos basta executar:
@@ -21,7 +22,9 @@ make examples
 ```
 ## Instruções de instalação e execução
 
-Para testar a implementação da systemcall, realizamos os seguintes passos:
+Apesar de não ter sido informado no enunciado do trabalho, é necessário compilar o kernel com o compilador **gcc-5**, caso contrário não é possível compilar. Para isto, baixe o pacote **gcc-5** ou similar na sua distribuição Linux e altere todos os termos *gcc* para *gcc-5* em *linux-3.17.2/Makefile*.
+
+Para testar a implementação da syscall, realizamos os seguintes passos:
 
 1. Descompactar o arquivo **Projeto_01.zip**, que contém o kernel e a imagem do sistema e colocar os arquivos **test_info.c** e **sys_info.h** na pasta gerada.
 
