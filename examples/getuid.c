@@ -1,14 +1,10 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include "../src/sys_info.h"
 
 int main(){
-	
-	uid_t uid, euid;
-	uid = getuid();
-	euid = geteuid();
-
-	printf("Real user ID: %d\nEffective user ID: %d\n", uid, euid);
+	info_t dados;
+	sys_info(OPT_UID, &dados);
+	printf("Real user ID: %d\nEffective user ID: %d\n", dados.uid, dados.euid);
 	
 	return 0;
 }

@@ -1,14 +1,11 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
+#include "../src/sys_info.h"
 
 int main(){
+	info_t dados;
+	sys_info(OPT_PID, &dados);
 	
-	pid_t pid, ppid;
-	pid = getpid();
-	ppid = getppid();
-
-	printf("Current Process ID: %d\nParent Process ID: %d\n", pid, ppid);
+	printf("Current Process ID: %d\nParent Process ID: %d\n", dados.pid, dados.ppid);
 	
 	return 0;
 }

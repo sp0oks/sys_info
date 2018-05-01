@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <sys/resource.h>
 #include <errno.h>
+#include <sys/resource.h>
+#include "../src/sys_info.h"
 
 int main(int argc, char** argv){
+	info_t dados;
 	struct rusage rusageData;
-	int err, type;
+	int err = sys_info(OPT_RUSAGE, &dados);
+
 	char* error = NULL;
 
 	if (argc == 2){
-		type = atoi(argv[1]);
+		int type = atoi(argv[1]);
 		switch(type) {
-			case 1:	err = getrusage(RUSAGE_SELF, &rusageData);
+			case 1:	rusageData = dados.rusageSelf;
 				break;
-			case 2: err = getrusage(RUSAGE_CHILDREN, &rusageData);
+			case 2: rusageData = dados.rusageChildren;
 				break;
 			default:
 				return -1;
@@ -34,3 +36,4 @@ int main(int argc, char** argv){
 	}
 	return 0;
 }
+
